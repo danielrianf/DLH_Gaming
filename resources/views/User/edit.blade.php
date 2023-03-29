@@ -46,7 +46,7 @@
 
                         <option value="">Pilih Role</option>
                         <option value="admin" {{$item->role == admin ? 'selected' : ''}}>Administrator</option>
-                        <option value="manajer" {{$item->role == manajer ? 'selected' : ''}}>Manajer</option>
+                        <option value="staf" {{$item->role == staf ? 'selected' : ''}}>Staf</option>
 
                     </select>
             </div>

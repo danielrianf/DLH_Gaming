@@ -9,15 +9,15 @@ class detailtran extends Model
     protected $table ="detailtrans";
     protected $primaryKey = 'id';
     protected $fillable = [
-       'bibit_id',
+       'project_id',
        'transaksi_id',
-       'harga_jual',
-       'jumlah',
-       'diskon',
-       'sub_total',
+    //    'harga_jual',
+    //    'jumlah',
+    //    'diskon',
+    //    'sub_total',
     ];
-    public function bibit(){
-        return $this->belongsTo(bibit::class);
+    public function project(){
+        return $this->belongsTo(project::class);
     }
 
     public function transaksi(){

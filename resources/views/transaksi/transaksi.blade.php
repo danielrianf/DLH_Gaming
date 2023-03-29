@@ -7,8 +7,8 @@
             <div class="col-md-12">
     <div class="card mt-5">
         <div class="card-header">
-            <h3 class="card-title">Data Transaksi</h3>
-            {{-- @if (auth()->user()->level=="2") --}}
+            <h3 class="card-title">Data List Project</h3>
+            {{-- @if (auth()->user()->level=="1") --}}
             <div class="float-right mb-5">
               <a class="btn btn-success" href="{{ url('/transaksi/create') }}"><i class="fas fa-fw fa-plus"></i> Tambah Transaksi</a>
             </div>
@@ -34,8 +34,12 @@
                 <th></th>
                 <th>No</th>
                 <th>@sortablelink('tanggal_transaksi','Tanggal Transaksi')</th>
-                <th>Nama Pelanggan</th>
+                <th>Nama Staf</th>
                 <th>@sortablelink('status','status')</th>
+                <th>Problem</th>
+                <th>Action</th>
+                <th>Due Date</th>
+                <th>Ka. Lab</th>
                 <th width="10%">Aksi</th>
               </tr>
             </thead>
@@ -63,7 +67,7 @@
               {{-- @endif --}}
               @method('DELETE')
               @csrf
-              {{-- @if (auth()->user()->level=="2") --}}
+              {{-- @if (auth()->user()->level=="1") --}}
               <button
                 type="submit"
                 class="btn btn-danger btn-xs"
@@ -84,7 +88,7 @@
     </div>
       </main>
       @section('footer')
-        <strong>Copyright &copy; 2022 <a href="">PT Agro Indo Raya</a>.</strong>
+        <strong>Copyright &copy; 2023 <a href="">Dinas Lingkungan Hidup Banyuwangi</a>.</strong>
         All rights reserved.
     @stop
 @endsection

@@ -9,7 +9,7 @@
       <div class="col-4">
         <div class="card card-warning mt-5">
           <div class="card-header text-center">
-            Tambah Transaksi
+            Tambah List Project
           </div>
           <div class="card-body">
               <div class="form-group">
@@ -29,7 +29,7 @@
               @enderror
             </div>
             <div class="form-group">
-              <label>Nama Pelanggan</label>
+              <label>Nama Staf</label>
               <select class="form-control select2" style="width: 100%;" name="pelanggan_id" id="pelanggan_id">
                 <option disabled value>Pilih Pelanggan</option>
                 @foreach ($pelanggan as $data_pelanggan)
@@ -37,22 +37,22 @@
                 @endforeach
               </select>
             </div>
-            <div class="input-group">
+            <!-- <div class="input-group">
               <label>Ongkir</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Rp</span>
                 <input type="number" name="ongkir" class="form-control @error('ongkir')
                   is-invalid @enderror" value="{{ old('ongkir') }}" aria-label="ongkir" min="0">
               </div>
-            </div>
-            <div class="input-group">
+            </div> -->
+            <!-- <div class="input-group">
               <label>DP (Down Payment)</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Rp</span>
                 <input type="number" name="dp" class="form-control @error('dp')
                   is-invalid @enderror" value="{{ old('dp') }}" aria-label="dp" min="0">
               </div>
-            </div>
+            </div> -->
             <div class="row">
               <div class="col-6">
                 <div class="form-group">
@@ -65,7 +65,7 @@
                   </select>
                 </div>
               </div>
-              <div class="col-6">
+              <!-- <div class="col-6">
                 <div class="input-group">
                   <label>Diskon</label>
                   <div class="input-group mb-3">
@@ -74,7 +74,7 @@
                     <span class="input-group-text" id="basic-addon1">%</span>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <button type="submit" class="btn btn-primary mt-30 mb-50">Submit</button>
@@ -96,10 +96,10 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama Bibit</th>
-                  <th>Qty</th>
+                  <th>Nama Project</th>
+                  <!-- <th>Qty</th>
                   <th>Harga Satuan</th>
-                  <th>Sub Total</th>
+                  <th>Sub Total</th> -->
                   <th>Action</th>
                 </tr>
               </thead>
@@ -109,30 +109,30 @@
                     <span class="numbering">1</span>
                   </td>
                   <td>
-                    <select class="form-control select2 w-100 nama_bibit" name="bibit_id[]">
-                      <option disabled value>Pilih Bibit</option>
-                      @foreach ($bibit as $val)
-                      <option value="{{ $val->id }}" data-harga="{{ $val->harga }}" data-satuan="{{ $val->satuan }}">{{ $val->nama_bibit }}</option>
+                    <select class="form-control select2 w-100 nama_project" name="project_id[]">
+                      <option disabled value>Pilih Project</option>
+                      @foreach ($project as $val)
+                      <option value="{{ $val->id }}" data-harga="{{ $val->harga }}" data-satuan="{{ $val->satuan }}">{{ $val->nama_project }}</option>
                       @endforeach
                     </select>
                   </td>
                   {{-- kolom qty --}}
-                  <td>
+                  <!-- <td>
                     <div class="input-group">
                       <input type="number" class="form-control text-center qty" name="qty[]" min="0">
                     </div>
-                  </td>
+                  </td> -->
                   {{-- kolom harga satuan --}}
-                  <td>
+                  <!-- <td>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp. </span>
                       </div>
-                      <input type="text" class="form-control text-center harga_satuan" format="currency" name="harga_satuan[]" value="{{ $bibit[0]->harga }}" readonly>
+                      <input type="text" class="form-control text-center harga_satuan" format="currency" name="harga_satuan[]" value="{{ $project[0]->harga }}" readonly>
                     </div>
-                  </td>
+                  </td> -->
                   {{-- kolom sub total --}}
-                  <td>
+                  <!-- <td>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp. </span>
@@ -142,11 +142,11 @@
                   </td>
                   <td>
                     <button class="btn btn-warning btn-remove" type="button">-</button>
-                  </td>
+                  </td> -->
                 </tr>
               </tbody>
               <tfoot>
-                <tr>
+                <!-- <tr>
                   <td colspan="4" class="text-right">
                     <h4>Total</h4>
                   </td>
@@ -156,7 +156,7 @@
                     </h4>
                     <input type="number" name="total_harga" class="d-none">
                   </td>
-                </tr>
+                </tr> -->
               </tfoot>
             </table>
           </div>
@@ -166,7 +166,7 @@
     </form>
   </div>
   @section('js')
-  <script>
+  <!-- <script>
     let item_transaksi = document.getElementById("item-transaksi-0");
 
     $('.btn-add').bind('click', function() {
@@ -196,8 +196,8 @@
         setHarga(this)
       })
 
-      $('.item-transaksi .nama_bibit').unbind('input')
-      $('.item-transaksi .nama_bibit').bind('input', function() {
+      $('.item-transaksi .nama_project').unbind('input')
+      $('.item-transaksi .nama_project').bind('input', function() {
         setHarga(this)
       })
     }
@@ -207,7 +207,7 @@
         .closest('.item-transaksi')
         .children('td')
       let qty = parent.children().children('.qty')
-      let bibit = parent.children('.nama_bibit').find(":selected")
+      let bibit = parent.children('.nama_project').find(":selected")
 
       parent.children().children('.harga_satuan').val(bibit.data('harga'))
       parent.children().children('.subtotal').val(bibit.data('harga') * qty.val())
@@ -229,6 +229,6 @@
         $(this).text(i + 1)
       })
     }
-  </script>
+  </script> -->
   @stop
 @endsection

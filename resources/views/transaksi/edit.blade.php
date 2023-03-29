@@ -6,7 +6,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
             <div class="card-header">
-            Edit Status Transaksi
+            Edit Status List Project
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -28,7 +28,7 @@
                 <input type="date" name="tanggal_transaksi" class="form-control" id="name" value="{{ $item->tanggal_transaksi }}">
             </div>
             <div class="form-group">
-                <label>Nama Pelanggan</label>
+                <label>Nama Staf</label>
                 <select class="form-control select2" style="width: 100%;" name="pelanggan_id" id="pelanggan_id">
                     <option disabled value>Pilih Pelanggan</option>
                     <option disabled value="{{ $item->pelanggan_id}}">{{ $item->pelanggan->nama_pelanggan}}</option>

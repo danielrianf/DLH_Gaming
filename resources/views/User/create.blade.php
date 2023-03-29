@@ -52,7 +52,7 @@
 
                         <option value="">Pilih Role</option>
                         <option value="admin">Administrator</option>
-                        <option value="manajer">Manajer</option>
+                        <option value="staf">Staf</option>
 
                     </select>
                     @error('role')

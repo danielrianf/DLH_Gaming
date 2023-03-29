@@ -17,11 +17,11 @@ class transaksi extends Model
     'tanggal_transaksi',
     'pelanggan_id',
     'status',
-    'invoice',
-    'total_harga',
-    'diskon',
-    'ongkir',
-    'dp',
+    // 'invoice',
+    // 'total_harga',
+    // 'diskon',
+    // 'ongkir',
+    // 'dp',
   ];
 
   public $sortable = [

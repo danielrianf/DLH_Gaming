@@ -31,7 +31,7 @@
                     <th>@sortablelink('invoice','No Invoice')</th>
                     <th>@sortablelink('pelanggan_id->nama_pelanggan','Nama Pelanggan')</th>
                     <th>@sortablelink('tanggal_transaksi','Tanggal Invoice')</th>
-                    <th>@sortablelink('total_harga','Total Harga')</th>
+                    <!-- <th>@sortablelink('total_harga','Total Harga')</th> -->
                     <th width="10%">Aksi</th>
                   </tr>
                 </thead>
@@ -47,7 +47,7 @@
               <td>{{ $item->invoice }}</td>
               <td>{{ $item->pelanggan->nama_pelanggan }}</td>
               <td>{{ $item->tanggal_transaksi }}</td>
-              <td>Rp. {{ $item->total_harga }}</td>
+              <!-- <td>Rp. {{ $item->total_harga }}</td> -->
               <td class="text-center">
                 <!-- <form action="{{ url('invoice/'.$item->id) }}" method="POST">
                   @method('DELETE')
@@ -69,7 +69,7 @@
       </div>
     </main>
     @section('footer')
-        <strong>Copyright &copy; 2022 <a href="">PT Agro Indo Raya</a>.</strong>
+        <strong>Copyright &copy; 2023 <a href="">Dinas Lingkungan Hidup Banyuwangi</a>.</strong>
         All rights reserved.
     @stop
 @endsection

@@ -49,7 +49,7 @@
     <div class="d-flex head gap-3 border-bottom border-2 border-dark pb-2 mb-2">
       <img src="https://i.ibb.co/xMdftRR/air.png" width="105" height="105" class="mt-2">
       <div>
-        <h5 class="fw-bold">PT AGRO INDO RAYA</h5>
+        <h5 class="fw-bold">Dinas Lingkungan Hidup</h5>
         <p>Jl. Ir.Soekarno 7B, Dusun Jatirejo Rt 05 Rw 02 Desa Glagahagung,</p>
         <p>Kec. Purwoharjo - Kab. Banyuwangi</p>
         <p>Telepon : 081 230 038 137 / 082 116 289 288</p>
@@ -90,26 +90,26 @@
       <thead>
         <tr style="background-color: #ababab">
           <th class="border border-dark text-center py-2" style="max-width: 15px">No.</th>
-          <th class="border border-dark text-center py-2">Nama Barang</th>
-          <th class="border border-dark text-center py-2" style="max-width: 40px">Jumlah (polibag)</th>
+          <th class="border border-dark text-center py-2">Nama Project</th>
+          <!-- <th class="border border-dark text-center py-2" style="max-width: 40px">Jumlah (polibag)</th>
           <th class="border border-dark text-center py-2">Pajak</th>
           <th class="border border-dark text-center py-2">Harga Satuan</th>
-          <th class="border border-dark text-center py-2">Total Harga</th>
+          <th class="border border-dark text-center py-2">Total Harga</th> -->
         </tr>
       </thead>
       <tbody>
         @foreach ($detail_trans as $i => $detail)
         <tr class="border border-dark">
           <td class="border border-dark text-center">{{ $i+1 }}</td>
-          <td class="border border-dark px-1">{{ $detail->bibit->nama_bibit }}</td>
-          <td class="border border-dark px-1 text-center">{{ $detail->jumlah }}</td>
+          <td class="border border-dark px-1">{{ $detail->project->nama_project }}</td>
+          <!-- <td class="border border-dark px-1 text-center">{{ $detail->jumlah }}</td>
           <td class="border border-dark px-1 text-center">{{ $detail->pajak ? $detail->pajak.'%' : '-' }}</td>
           <td class="border border-dark px-1 text-end">Rp. {{ $detail->harga_jual }}</td>
-          <td class="border border-dark px-1 text-end">Rp. {{ $detail->subtotal }}</td>
+          <td class="border border-dark px-1 text-end">Rp. {{ $detail->subtotal }}</td> -->
         </tr>
         @endforeach
       </tbody>
-      <tfoot>
+      <!-- <tfoot>
         <tr>
           <td rowspan="5" colspan="4">
             <div class="m-2 p-3 border border-dark text-center">
@@ -136,7 +136,7 @@
           <th class="border border-dark text-center">SISA</th>
           <td class="border border-dark px-1 text-end">Rp. {{ $transaksi->total_harga + $transaksi->ongkir - $transaksi->dp ?? 0 }}</td>
         </tr>
-      </tfoot>
+      </tfoot> -->
     </table>
     <table class="mt-1 w-100">
       <tr>

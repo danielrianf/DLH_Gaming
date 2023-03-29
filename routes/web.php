@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\bibitController;
+use App\Http\Controllers\projectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\pelangganController;
 use App\Http\Controllers\laporanController;
@@ -26,7 +26,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('/bibit', 'App\Http\Controllers\bibitController')->middleware('auth');
+Route::resource('/project', 'App\Http\Controllers\projectController')->middleware('auth');
 Route::resource('/pelanggan', 'App\Http\Controllers\pelangganController')->middleware('auth');
 Route::resource('/suratjln', 'App\Http\Controllers\suratjlnController')->middleware('auth');
 Route::resource('/invoice', 'App\Http\Controllers\invoiceController')->middleware('auth');
@@ -53,7 +53,7 @@ Route::get('/CetakDataPerTanggal/{tglawal}/{tglakhir}', [laporanController::clas
 
 
 //Route search
-Route::get('/search', [bibitController::class, 'search'])->name('search');
+Route::get('/search', [projectController::class, 'search'])->name('search');
 Route::get('/search', [pelangganController::class, 'search'])->name('search');
 Route::get('/search', [UserController::class, 'search'])->name('search');
 Route::get('/search', [invoiceController::class, 'search'])->name('search');

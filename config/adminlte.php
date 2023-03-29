@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'PT.Agro Indo Raya',
+    'title' => 'DLH Banyuwangi',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>PT Agro Indo Raya</b>',
-    'logo_img' => 'https://i.ibb.co/xMdftRR/air.png',
+    'logo' => '<b>DLH Banyuwangi</b>',
+    'logo_img' => 'https://i.ibb.co/Q9R3hrF/logo-bwi.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'https://i.ibb.co/Q9R3hrF/logo-bwi.png',
 
     /*
     |--------------------------------------------------------------------------
@@ -233,52 +233,53 @@ return [
             'icon' => 'fas fa-fw fa-home',
         ],
 
-        // ['header' => 'Data Master',
-        // 'can' => 'Admin'],
+        ['header' => 'Management Project',
+        'can' => 'Admin'],
         [
-            'text' => 'Data bibit',
-            'url'  => '/bibit',
+            'text' => 'Data Project',
+            'url'  => '/project',
             'icon' => 'fas fa-fw fa-layer-group',
             'can' => 'Admin'
         ],
         [
-            'text' => 'Data Pelanggan',
+            'text' => 'Data Staf',
             'url'  => '/pelanggan',
             'icon' => 'fas fa-fw fa-user-tie',
             'can' => 'Admin'
         ],
+        [
+            'text' => 'List Project',
+            'url'  => '/transaksi',
+            'icon' => 'fas fa-fw fa-money-bill', 
+            'can'  => 'Admin' 
+        ],
+        // ['header' => 'Dokumen Penjualan',
+        // 'can' => 'Admin'],
         // [
-        //     'text' => 'Data User',
-        //     'url'  => '/user',
-        //     'icon' => 'fas fa-fw fa-user',
+        //     'text' => 'Invoice',
+        //     'url'  => '/invoice',
+        //     'icon' => 'fas fa-fw fa-file-invoice-dollar',
         //     'can' => 'Admin'
         // ],
-        [
-            'text' => 'Data Transaksi',
-            'url'  => '/transaksi',
-            'icon' => 'fas fa-fw fa-money-bill',
-            'can'  => 'Admin'
-        ],
-        ['header' => 'Dokumen Penjualan',
-        'can' => 'Admin'],
-        [
-            'text' => 'Invoice',
-            'url'  => '/invoice',
-            'icon' => 'fas fa-fw fa-file-invoice-dollar',
-            'can' => 'Admin'
-        ],
-        [
-            'text' => 'Surat Jalan',
-            'url'  => '/suratjln',
-            'icon' => 'fas fa-fw fa-envelope-open-text',
-            'can' => 'Admin'
-        ],
+        // [
+        //     'text' => 'Surat Jalan',
+        //     'url'  => '/suratjln',
+        //     'icon' => 'fas fa-fw fa-envelope-open-text',
+        //     'can' => 'Admin'
+        // ],
 
-        ['header' => 'Laporan'],
+        ['header' => 'User',
+        'can' => 'Admin'],
+        // [
+        //     'text' => 'Penjualan',
+        //     'url'  => '/laporan',
+        //     'icon' => 'fas fa-fw fa-file',
+        // ],
         [
-            'text' => 'Penjualan',
-            'url'  => '/laporan',
-            'icon' => 'fas fa-fw fa-file',
+            'text' => 'Management User',
+            'url'  => '/user',
+            'icon' => 'fas fa-fw fa-user',
+            'can' => 'Admin'
         ],
     ],
 

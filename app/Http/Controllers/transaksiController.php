@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\bibit;
+use App\Models\project;
 use App\Models\detailtran;
 use App\Models\pelanggan;
 use Illuminate\Http\Request;
@@ -43,11 +43,11 @@ class transaksiController extends Controller
     public function create() {
         $pelanggan = pelanggan::all();
         $transaksi = transaksi::all();
-        $bibit = bibit::all();
-        if ($bibit->isEmpty()) {
-          return redirect('/bibit/create')->with('warning', 'Data bibit masih kosong, tambahkan terlebih dahulu!');
+        $project = project::all();
+        if ($project->isEmpty()) {
+          return redirect('/project/create')->with('warning', 'Data project masih kosong, tambahkan terlebih dahulu!');
         } else if ($pelanggan->isEmpty()) {
-          return redirect('/pelanggan/create')->with('warning', 'Belum memiliki data pelanggan, tambahkan terlebih dahulu!');
+          return redirect('/pelanggan/create')->with('warning', 'Belum memiliki data staff, tambahkan terlebih dahulu!');
         }
 
         // coba
@@ -67,7 +67,7 @@ class transaksiController extends Controller
         }
         // sampai ini
 
-        return view('transaksi.create', compact('pelanggan','transaksi', 'bibit','inv'));
+        return view('transaksi.create', compact('pelanggan','transaksi', 'project','inv'));
     }
 
     /**
@@ -91,20 +91,20 @@ class transaksiController extends Controller
           'tanggal_transaksi' => $request->tanggal_transaksi,
           'pelanggan_id' => $request->pelanggan_id,
           'status' => $request->status,
-          'ongkir' => $request->ongkir,
-          'diskon' => $request->diskon,
-          'total_harga' => $request->total_harga,
+        //   'ongkir' => $request->ongkir,
+        //   'diskon' => $request->diskon,
+        //   'total_harga' => $request->total_harga,
         ]);
 
         $detailtrans = [];
-        foreach ($request->bibit_id as $i => $detail) {
+        foreach ($request->project_id as $i => $detail) {
           array_push($detailtrans, [
-            'harga_jual' => $request->harga_satuan[$i],
-            'jumlah' => $request->qty[$i],
-            'diskon' => 0,
-            'bibit_id' => $request->bibit_id[$i],
+            // 'harga_jual' => $request->harga_satuan[$i],
+            // 'jumlah' => $request->qty[$i],
+            // 'diskon' => 0,
+            'project_id' => $request->project_id[$i],
             'transaksi_id' => $transaksi_id,
-            'subtotal' => $request->subtotal[$i],
+            // 'subtotal' => $request->subtotal[$i],
           ]);
         }
         // return json_encode($detailtrans);

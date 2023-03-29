@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\suratjln;
 use App\Http\Controllers\Auth;
 use App\Models\pelanggan;
-use App\Models\bibit;
+use App\Models\project;
 use Illuminate\Support\Facades\DB;
 
 class suratjlnController extends Controller

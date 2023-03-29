@@ -86,7 +86,7 @@
 </div>
 </main>
 @section('footer')
-        <strong>Copyright &copy; 2022 <a href="">PT Agro Indo Raya</a>.</strong>
+        <strong>Copyright &copy; 2023 <a href="">Dinas Lingkungan Hidup Banyuwangi</a>.</strong>
         All rights reserved.
     @stop
 @endsection

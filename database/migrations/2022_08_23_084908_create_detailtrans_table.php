@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('detailtrans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('bibit_id')
+            $table->foreignId('project_id')
                     ->constrained()->onUpdate('cascade') ->onDelete('cascade');
             $table->foreignId('transaksi_id')
                     ->constrained()->onUpdate('cascade') ->onDelete('cascade');
-            $table->string('harga_jual');
-            $table->tinyInteger('diskon')->nullable();
-            $table->string('subtotal');
-            $table->string('jumlah');
+            // $table->string('harga_jual');
+            // $table->tinyInteger('diskon')->nullable();
+            // $table->string('subtotal');
+            // $table->string('jumlah');
             $table->timestamps();
         });
     }

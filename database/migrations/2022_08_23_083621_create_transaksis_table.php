@@ -18,11 +18,11 @@ return new class extends Migration
             $table->foreignId('pelanggan_id')
                     ->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->date('tanggal_transaksi');
-            $table->string('invoice')->unique();
-            $table->bigInteger('total_harga');
-            $table->tinyInteger('diskon')->nullable();
-            $table->integer('ongkir')->nullable();
-            $table->integer('dp')->nullable();
+            // $table->string('invoice')->unique();
+            // $table->bigInteger('total_harga');
+            // $table->tinyInteger('diskon')->nullable();
+            // $table->integer('ongkir')->nullable();
+            // $table->integer('dp')->nullable();
             $table->string('status');
             $table->timestamps();
         });

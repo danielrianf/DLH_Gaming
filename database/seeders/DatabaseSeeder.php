@@ -24,18 +24,18 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        User::create([
-            'name' => 'Marketing',
-            'email' => 'marketing@gmail.com',
-            'password' => bcrypt('marketing123'),
-            'role' => 'marketing',
-        ]);
+        // User::create([
+        //     'name' => 'Marketing',
+        //     'email' => 'marketing@gmail.com',
+        //     'password' => bcrypt('marketing123'),
+        //     'role' => 'marketing',
+        // ]);
 
-        User::create([
-            'name' => 'Manajer',
-            'email' => 'manajer@gmail.com',
-            'password' => bcrypt('manajer123'),
-            'role' => 'manajer',
-        ]);
+        // User::create([
+        //     'name' => 'Staf',
+        //     'email' => 'staf@gmail.com',
+        //     'password' => bcrypt('staf123'),
+        //     'role' => 'staf',
+        // ]);
     }
 }
